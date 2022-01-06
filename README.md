@@ -1,2 +1,2 @@
-# Cuisto_Server
-A fantastic website that offer different recipe for all taste.
+# CRUD_Demo
+This is a project that illustrate a minimal Node.js API server.
