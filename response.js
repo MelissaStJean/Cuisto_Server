@@ -1,7 +1,28 @@
+const utilities = require('./utilities');
+const Cache = require('./getRequestsCacheManager');
 module.exports = 
 class Response {
-    constructor (res){
+    constructor (res, url = "") {
         this.res = res;
+        this.url = this.makeCacheableEndpoint(url);
+        this.urlBase = this.makeUrlBase(url);
+    }
+    makeCacheableEndpoint(url){
+        if (url != "") {
+            let path = utilities.decomposePath(url);
+            // todo manage page and params
+            if (path.isAPI && path.id == undefined)
+                return url;
+        }
+        // not cacheable
+        return "";
+    }
+    makeUrlBase(url){
+        if (url != "") {
+            let path = utilities.decomposePath(url);
+            return (path.isAPI ? "/api":"") + "/" + path.model;
+        }
+        return "";
     }
     status(number){
         this.res.writeHead(number, {'content-type':'text/plain'});
@@ -10,22 +31,43 @@ class Response {
     ok() {
         // ok status
         this.status(200);
+        Cache.clear(this.urlBase);
     }
     accepted() {
         // accepted status
         this.status(202);
+        Cache.clear(this.urlBase);
     }
     created(jsonObj) {
         this.res.writeHead(201, {'content-type':'application/json'});
         this.res.end(JSON.stringify(jsonObj));
+        Cache.clear(this.urlBase);
     }
-    JSON(jsonObj) {
-        this.res.writeHead(200, {'content-type':'application/json'});
-        this.res.end(JSON.stringify(jsonObj));
+    JSON(jsonObj, ETag = "") {
+        if (jsonObj != null) {
+            let content = JSON.stringify(jsonObj);
+            Cache.add(this.url, content, ETag);
+            if (ETag != "")
+                this.res.writeHead(200, {'content-type':'application/json', 'ETag': ETag});
+            else
+                this.res.writeHead(200, {'content-type':'application/json'});
+            this.res.end(content);
+        } else {
+            if (ETag != "")
+                this.res.writeHead(204, {'content-type':'application/json', 'ETag': ETag});
+            else
+                this.res.writeHead(204, {'content-type':'application/json'});
+            this.res.end();
+        }
     }  
+    ETag(ETag){
+        this.res.writeHead(204, {'ETag': ETag});
+        this.res.end();
+    }
     noContent() {
         // no content status
         this.status(204);
+        Cache.clear(this.urlBase);
     }
     notFound() {
         // not found status
@@ -34,6 +76,10 @@ class Response {
     forbidden() {
         // forbidden status
         this.status(403);
+    }
+    unAuthorized() {
+        // forbidden status
+        this.status(401);
     }
     notAloud() {
         // Method not aloud status
@@ -60,7 +106,7 @@ class Response {
         this.status(500);
     }
     notImplemented() {
-        // internal error status
+        //Not implemented
         this.status(501);
     }
 }

@@ -9,6 +9,9 @@
   "author": "Mélissa St-Jean & Alexandre Tardif",
   "license": "ISC",
   "dependencies": {
-    "query-string": "^6.13.2"
+    "date-and-time": "^2.0.1",
+    "properties-reader": "^2.2.0",
+    "query-string": "^6.13.2",
+    "uuid": "^8.3.2"
   }
 }
