@@ -1,4 +1,4 @@
-////This funciton return the endpoints list in html
+////This function return the endpoints list in html
 exports.list = (res) => {
     function EnumerateEndpoints(controllerFile){
         let endpoints = "";
