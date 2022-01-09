@@ -1,6 +1,6 @@
 const Repository = require('./repository');
 const ImageFilesRepository = require('./imageFilesRepository.js');
-const User = require('./user.js');
+const User = require('./users.js');
 const utilities = require("../utilities");
 module.exports = 
 class UsersRepository extends Repository {
@@ -36,8 +36,8 @@ class UsersRepository extends Repository {
     add(user) {
         user["Created"] = utilities.nowInSeconds();
         if (User.valid(user)) {
-            user["AvatarGUID"] = ImageFilesRepository.storeImageData("", user["NewsData"]);
-            delete user["NewsData"];
+            user["AvatarGUID"] = ImageFilesRepository.storeImageData("", user["UserData"]);
+            delete user["UserData"];
             return this.bindAvatarURL(super.add(user));
         }
         return null;
@@ -48,8 +48,8 @@ class UsersRepository extends Repository {
             let foundUser = super.get(user.Id);
             if (foundUser != null) {
                 user["Created"] = foundUser["Created"];
-                user["AvatarGUID"] = ImageFilesRepository.storeImageData(user["AvatarGUID"], user["NewsData"]);
-                delete user["NewsData"];
+                user["AvatarGUID"] = ImageFilesRepository.storeImageData(user["AvatarGUID"], user["UserData"]);
+                delete user["UserData"];
                 
                 return super.update(user);
             }

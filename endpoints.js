@@ -9,9 +9,9 @@ exports.list = (res) => {
         // get all the owned properties of controller class prototype
         let methods = Object.getOwnPropertyNames(Object.getPrototypeOf(controller));
         // get the model name
-        let resourceName = controllerFile.replace('sController.js','').toLowerCase();
+        let resourceName = controllerFile.replace('','').toLowerCase();
         // pluralize model name
-        let resourceNames = resourceName + 's';
+        let resourceNames = resourceName;
         let resclass = null;
         try {
             // make instance of model
@@ -22,7 +22,7 @@ exports.list = (res) => {
         } catch (error) {
             // no model associated with controller
             // must be an endpoint working with query strings
-            resourceNames = resourceNames + "? return list of possible query strings";
+            resourceNames = resourceNames + " return list of possible query strings";
         } 
         // if we have a get method, expose GET: /api/ModelsController and GET: /api/ModelsController/id endpoints
         if (methods.indexOf('get') > -1){

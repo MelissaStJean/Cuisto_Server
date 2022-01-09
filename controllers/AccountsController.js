@@ -2,7 +2,7 @@ const usersRepository = require('../models/usersRepository');
 const ImagesRepository = require('../models/imagesRepository');
 const TokenManager = require('../tokenManager');
 const utilities = require("../utilities");
-const User = require('../models/user');
+const User = require('../models/users');
 const Cache = require('../getRequestsCacheManager');
 const Repository = require('../models/repository');
 

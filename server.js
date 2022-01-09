@@ -2,6 +2,19 @@ function ShowRequestInfo(req) {
     console.log('<-------------------------', getTime(), '-------------------------');
     console.log(`Request --> [${req.method}::${req.url}]`);
 }
+
+/*let Category = require('./models/initCategory.js'); //1
+Category.initCategory();
+
+let Filter = require('./models/initFilter.js'); //1
+Filter.initFilter();*/
+
+/*let Ingredient = require('./models/initIngredient.js'); //2
+Ingredient.initIngredient();*/
+
+/*let Recipe = require('./models/initRecipe.js'); //3
+Recipe.initRecipe();*/
+
 function API_Endpoint(req, res) {
     return require('./router').dispatch_API_EndPoint(req, res);
 }
@@ -111,14 +124,13 @@ const server = require('http').createServer(async (req, res) => {
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
     console.log("**********************************");
-    console.log("* API SERVER - version 2.11      *");
+    console.log("*    Chez Mel - version 1.0      *");
     console.log("**********************************");
-    console.log("* Author: Mélissa St-Jean & Alexandre Tardif        *");
-    console.log("* Release date: january 06 2021 *");
+    console.log("* Mélissa St-Jean & Alexandre Tardif*");
+    console.log("* Release date: January 09 2022 *");
     console.log("**********************************");
     console.log(`HTTP Server running on port ${PORT}...`);
     if (Hide_HEAD_Request)
         console.log("Warning! HEAD requests are hidden.")
 });
 showMemoryUsage();
-
