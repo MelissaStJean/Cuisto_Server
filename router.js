@@ -36,7 +36,7 @@ exports.dispatch_TOKEN_EndPoint = function (req, res) {
             try {
                 // dynamically import the targeted controller
                 // if the controller does not exist the catch section will be called
-                const Controller = require('./controllers/AccountsController');
+                const Controller = require('./controllers/AccountController');
                 // instanciate the controller       
                 let controller = new Controller(req, res);
                 if (isJSONContent(req, res)) {

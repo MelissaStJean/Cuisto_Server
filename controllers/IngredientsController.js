@@ -9,7 +9,7 @@ module.exports =
         }
 
         head() {
-            console.log("Bookmarks ETag request:", this.ingredientsRepository.ETag);
+            console.log("Ingredients ETag request:", this.ingredientsRepository.ETag);
             this.response.ETag(this.ingredientsRepository.ETag);
         }
 

@@ -7,7 +7,7 @@ const Cache = require('../getRequestsCacheManager');
 const Repository = require('../models/repository');
 
 module.exports =
-    class AccountsController extends require('./Controller') {
+    class AccountController extends require('./Controller') {
         constructor(req, res) {
             super(req, res);
             this.usersRepository = new usersRepository(this.req);
@@ -31,6 +31,51 @@ module.exports =
                 }
                 this.response.JSON(usersClone);
             }
+        }
+
+        head() {
+            console.log("User ETag request:", this.usersRepository.ETag);
+            this.response.ETag(this.usersRepository.ETag);
+        }
+
+        // GET: api/account
+        // GET: api/account/{id}
+        get(id) {
+            if (this.params) {
+                if (Object.keys(this.params).length > 0) {
+                    this.response.JSON(this.usersRepository.getAll(this.params), this.usersRepository.ETag);
+                } else {
+                    this.queryStringHelp();
+                }
+            }
+            else {
+                if (!isNaN(id)) {
+                    this.response.JSON(this.usersRepository.get(id));
+                }
+                else {
+                    this.response.JSON(this.usersRepository.getAll(), this.usersRepository.ETag);
+                }
+            }
+        }
+
+        post(user) {
+            if (this.requestActionAuthorized()) {
+                // validate user before insertion
+                if (User.valid(user)) {
+                    // avoid duplicate names
+                    if (this.usersRepository.findByField('Name', user.Name) !== null) {
+                        this.response.conflict();
+                    } else {
+                        let newUser = this.usersRepository.add(user);
+                        if (newUser)
+                            this.response.created(newUser);
+                        else
+                            this.response.internalError();
+                    }
+                } else
+                    this.response.unprocessable();
+            } else
+                this.response.unAuthorized();
         }
 
         // POST: /token body payload[{"Email": "...", "Password": "...", "grant-type":"password"}]

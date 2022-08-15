@@ -73,6 +73,7 @@ class TokenManager{
         return null;
     }
     static requestAuthorized(req){
+        console.log(req.headers);
         if (req.headers["authorization"] != undefined) {
             // Extract bearer token from head of the http request
             let token = req.headers["authorization"].replace('Bearer ','');

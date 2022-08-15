@@ -9,7 +9,7 @@ exports.list = (res) => {
         // get all the owned properties of controller class prototype
         let methods = Object.getOwnPropertyNames(Object.getPrototypeOf(controller));
         // get the model name
-        let resourceName = controllerFile.replace('','').toLowerCase();
+        let resourceName = controllerFile.replace('sController.js','').toLowerCase();
         // pluralize model name
         let resourceNames = resourceName;
         let resclass = null;
