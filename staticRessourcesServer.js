@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 let wwwroot = 'wwwroot';
-let defaultRessource = 'index.html';
+let defaultRessource = 'main.html';
 
 function requestedStaticRessource(url) {
     let ressourceName = url === '/' ? defaultRessource : url;

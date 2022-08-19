@@ -1,1 +1,26 @@
-[{"Id":1,"CategoryName":"Déjeuner"},{"Id":2,"CategoryName":"Souper"},{"Id":3,"CategoryName":"Entrée"},{"Id":4,"CategoryName":"Dessert"}]
+[
+    {
+        "Id": 1,
+        "CategoryName": "Déjeuners"
+    },
+    {
+        "Id": 2,
+        "CategoryName": "Entrées"
+    },
+    {
+        "Id": 3,
+        "CategoryName": "Plats principaux"
+    },
+    {
+        "Id": 4,
+        "CategoryName": "Desserts"
+    },
+    {
+        "Id": 5,
+        "CategoryName": "Breuvages"
+    },
+    {
+        "Id": 6,
+        "CategoryName": "Collations"
+    }
+]

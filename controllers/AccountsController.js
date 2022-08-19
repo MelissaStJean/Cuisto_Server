@@ -4,7 +4,6 @@ const TokenManager = require('../tokenManager');
 const utilities = require("../utilities");
 const User = require('../models/users');
 const Cache = require('../getRequestsCacheManager');
-const Repository = require('../models/repository');
 
 module.exports =
     class AccountController extends require('./Controller') {
@@ -148,19 +147,7 @@ module.exports =
             } else
                 this.response.unAuthorized();
         }
-        deleteAllUsersBookmarks(userId) {
-            let bookmarksRepository = new Repository('Bookmarks', true);
-            let bookmarks = bookmarksRepository.getAll();
-            let indexToDelete = [];
-            let index = 0;
-            for (let bookmark of bookmarks) {
-                if (bookmark.UserId == userId)
-                    indexToDelete.push(index);
-                index++;
-            }
-            bookmarksRepository.removeByIndex(indexToDelete);
-            Cache.clear('bookmarks');
-        }
+        
         deleteAllUsersImages(userId) {
             let imagesRepository = new ImagesRepository(this.req, true);
             let images = imagesRepository.getAll();
@@ -177,7 +164,6 @@ module.exports =
 
         remove(id) {
             if (this.requestActionAuthorized()) {
-                this.deleteAllUsersBookmarks(id);
                 this.deleteAllUsersImages(id);
                 if (this.usersRepository.remove(id))
                     this.response.accepted();

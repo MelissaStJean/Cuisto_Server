@@ -1,1 +1,58 @@
-[{"Id":1,"FilterName":"Santé"},{"Id":2,"FilterName":"Sans-Gluten"},{"Id":3,"FilterName":"Vegan"},{"Id":4,"FilterName":"Protéiné"}]
+[
+    {
+        "Id": 1,
+        "FilterName": "Santé"
+    },
+    {
+        "Id": 2,
+        "FilterName": "5 ingrédients"
+    },
+    {
+        "Id": 3,
+        "FilterName": "- 30 min"
+    },
+    {
+        "Id": 4,
+        "FilterName": "Sans cuisson"
+    },
+    {
+        "Id": 5,
+        "FilterName": "Sauces"
+    },
+    {
+        "Id": 6,
+        "FilterName": "Pâtes"
+    },
+    {
+        "Id": 7,
+        "FilterName": "Viandes"
+    },
+    {
+        "Id": 8,
+        "FilterName": "Poissons"
+    },
+    {
+        "Id": 9,
+        "FilterName": "Gâteaux"
+    },
+    {
+        "Id": 10,
+        "FilterName": "Au mélangeur"
+    },
+    {
+        "Id": 11,
+        "FilterName": "Au Bbq"
+    },
+    {
+        "Id": 12,
+        "FilterName": "Pot masson"
+    },
+    {
+        "Id": 13,
+        "FilterName": "Recette étrangère"
+    },
+    {
+        "Id": 14,
+        "FilterName": "À congeler"
+    }
+]

@@ -1,1 +1,40 @@
-[{"Id":1,"RecipeName":"Pancake","RecipeCategory":{"Id":1,"CategoryName":"Déjeuner"},"RecipeIngredient":[{"Id":1,"IngredientName":"Farine","IngredientQuantity":1,"IngredientExpirationDate":"03/03/02","IngredientImageGUID":""},{"Id":2,"IngredientName":"Chocolat","IngredientQuantity":2,"IngredientExpirationDate":"05/10/23","IngredientImageGUID":""},{"Id":3,"IngredientName":"Framboise","IngredientQuantity":3,"IngredientExpirationDate":"18/01/22","IngredientImageGUID":""}],"RecipeSteps":["Exemple pour","le futur","ok boomer"],"RecipeDishesNumber":4,"RecipeDifficulty":2,"RecipeRating":5,"RecipePreparationTime":15,"RecipeCookingTime":30,"RecipeCookingTemperature":350,"RecipeHints":"Bien beurrer","RecipeLastResort":"Farine de sarasin","RecipeImageGUID":"N/A"}]
+[
+  {
+    "Id": 1,
+    "RecipeName": "Pancake",
+    "RecipeCategory": { "Id": 1, "CategoryName": "Déjeuner" },
+    "RecipeIngredient": [
+      {
+        "Id": 1,
+        "IngredientName": "Farine",
+        "IngredientQuantity": 1,
+        "IngredientExpirationDate": "03/03/02",
+        "IngredientImageGUID": ""
+      },
+      {
+        "Id": 2,
+        "IngredientName": "Chocolat",
+        "IngredientQuantity": 2,
+        "IngredientExpirationDate": "05/10/23",
+        "IngredientImageGUID": ""
+      },
+      {
+        "Id": 3,
+        "IngredientName": "Framboise",
+        "IngredientQuantity": 3,
+        "IngredientExpirationDate": "18/01/22",
+        "IngredientImageGUID": ""
+      }
+    ],
+    "RecipeSteps": ["Exemple pour", "le futur", "ok boomer"],
+    "RecipeDishesNumber": 4,
+    "RecipeDifficulty": 2,
+    "RecipeRating": 5,
+    "RecipePreparationTime": 15,
+    "RecipeCookingTime": 30,
+    "RecipeCookingTemperature": 350,
+    "RecipeHints": "Bien beurrer",
+    "RecipeLastResort": "Farine de sarasin",
+    "RecipeImageGUID": "N/A"
+  }
+]

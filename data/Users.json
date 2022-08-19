@@ -1,10 +1,1 @@
-[
-    {
-        "Id":0,
-        "Name":"Mélissa St-Jean",
-        "Email":"melissa@gmail.com",
-        "Password":"123",
-        "Created":0,
-        "AvatarGUID":"bfb7fedf-c4f9-4204-a8fa-debec0bf4d8d"
-    }
-]   
+[{"Id":0,"Name":"Mélissa St-Jean","Email":"melissa@gmail.com","Password":"123","Created":0,"AvatarGUID":"bfb7fedf-c4f9-4204-a8fa-debec0bf4d8d"},{"Id":1,"Name":"Alexandre","Email":"alexandre@gmail.com","Password":"123","AvatarGUID":"","Created":1660850796},{"Id":2,"Name":"Cass","Email":"cass@gmail.com","Password":"123","AvatarGUID":"","Created":1660852581}]
