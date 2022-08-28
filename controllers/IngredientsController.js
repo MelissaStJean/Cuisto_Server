@@ -34,7 +34,7 @@ module.exports =
             }
         }
         post(ingredient) {
-            if (this.requestActionAuthorized()) {
+            //if (this.requestActionAuthorized()) {
                 // validate ingredient before insertion
                 if (Ingredient.valid(ingredient)) {
                     // avoid duplicate names
@@ -49,8 +49,8 @@ module.exports =
                     }
                 } else
                     this.response.unprocessable();
-            } else
-                this.response.unAuthorized();
+            //} else
+                //this.response.unAuthorized();
         }
         // PUT: api/ingredients body payload[{"IngredientId":..., "IngredientName": "...", "IngredientQuantity": "...", "IngredientExpirationDate": "...", "IngredientImageGUID": ..}]
         put(ingredient) {

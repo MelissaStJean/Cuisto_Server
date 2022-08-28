@@ -35,8 +35,8 @@ class IngredientRepository extends Repository {
     }
     add(ingredient) {
         if (Ingredient.valid(ingredient)) {
-            ingredient["IngredientImageGUID"] = ImageFilesRepository.storeImageData("", ingredient["IngredientData"]);
-            delete ingredient["IngredientData"];
+            //ingredient["IngredientImageGUID"] = ImageFilesRepository.storeImageData("", ingredient["IngredientData"]);
+            //delete ingredient["IngredientData"];
             return this.bindIngredientURL(super.add(ingredient));
         }
         return null;
