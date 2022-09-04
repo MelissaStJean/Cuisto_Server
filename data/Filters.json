@@ -1,58 +1,72 @@
 [
     {
         "Id": 1,
-        "FilterName": "Santé"
+        "FilterName": "Santé",
+        "FilterTag" : "healthy"
     },
     {
         "Id": 2,
-        "FilterName": "5 ingrédients"
+        "FilterName": "5 ingrédients",
+        "FilterTag" : "5ingredients"
     },
     {
         "Id": 3,
-        "FilterName": "- 30 min"
+        "FilterName": "- 30 min",
+        "FilterTag" : "30minutes"
     },
     {
         "Id": 4,
-        "FilterName": "Sans cuisson"
+        "FilterName": "Sans cuisson",
+        "FilterTag" : "noHeat"
     },
     {
         "Id": 5,
-        "FilterName": "Sauces"
+        "FilterName": "Sauces",
+        "FilterTag" : "sauces"
     },
     {
         "Id": 6,
-        "FilterName": "Pâtes"
+        "FilterName": "Pâtes",
+        "FilterTag" : "pasta"
     },
     {
         "Id": 7,
-        "FilterName": "Viandes"
+        "FilterName": "Viandes",
+        "FilterTag" : "meat"
     },
     {
         "Id": 8,
-        "FilterName": "Poissons"
+        "FilterName": "Poissons",
+        "FilterTag" : "fish"
     },
     {
         "Id": 9,
-        "FilterName": "Gâteaux"
+        "FilterName": "Gâteaux",
+        "FilterTag" : "cakes"
     },
     {
         "Id": 10,
-        "FilterName": "Au mélangeur"
+        "FilterName": "Au mélangeur",
+        "FilterTag" : "blender"
     },
     {
         "Id": 11,
-        "FilterName": "Au Bbq"
+        "FilterName": "Au Bbq",
+        "FilterTag" : "Bbq"
     },
     {
         "Id": 12,
-        "FilterName": "Pot masson"
+        "FilterName": "Pot masson",
+        "FilterTag" : "jar"
     },
     {
         "Id": 13,
-        "FilterName": "Recette étrangère"
+        "FilterName": "Recette étrangère",
+        "FilterTag" : "foreignRecipe"
     },
     {
         "Id": 14,
-        "FilterName": "À congeler"
+        "FilterName": "À congeler",
+        "FilterTag" : "canFreeze"
     }
 ]

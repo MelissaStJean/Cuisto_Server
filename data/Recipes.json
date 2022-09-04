@@ -8,21 +8,18 @@
         "Id": 1,
         "IngredientName": "Farine",
         "IngredientQuantity": 1,
-        "IngredientExpirationDate": "03/03/02",
         "IngredientImageGUID": ""
       },
       {
         "Id": 2,
         "IngredientName": "Chocolat",
         "IngredientQuantity": 2,
-        "IngredientExpirationDate": "05/10/23",
         "IngredientImageGUID": ""
       },
       {
         "Id": 3,
         "IngredientName": "Framboise",
         "IngredientQuantity": 3,
-        "IngredientExpirationDate": "18/01/22",
         "IngredientImageGUID": ""
       }
     ],
@@ -36,5 +33,20 @@
     "RecipeHints": "Bien beurrer",
     "RecipeLastResort": "Farine de sarasin",
     "RecipeImageGUID": "N/A"
+  },
+  {
+    "RecipeName": "asdasdsa",
+    "RecipeCategory": "Fruits et légumes",
+    "RecipeIngredient": "asdas",
+    "RecipeSteps": "aaazzzzxczxc",
+    "RecipeDishesNumber": "2",
+    "RecipeDifficulty": 1.5,
+    "RecipeRating": 3,
+    "RecipePreparationTime": 23,
+    "RecipeCookingTime": 34,
+    "RecipeCookingTemperature": 45,
+    "RecipeHints": "adssadsa",
+    "RecipeLastResort": "asddsadsaqqweq",
+    "Id": 2
   }
 ]
